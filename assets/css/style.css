@@ -72,3 +72,36 @@ input[type="text"] {
     border-radius: 5px;
     margin-bottom: 10px;
 }
+
+.close {
+    position: absolute; 
+    
+    padding: 1px 5px 1px;
+    
+    
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  /* When clicked on, add a background color and strike out text */
+ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+  }
+  
+  /* Add a "checked" mark when clicked on */
+  ul li.checked::before {
+    content: '';
+    position: absolute;
+    
+    border-color: #100f0f;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+   
+    left: 300px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
