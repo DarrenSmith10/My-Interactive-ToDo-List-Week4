@@ -3,6 +3,7 @@ html {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    font-size: 18px;
     background-color: #f4f6f9;
 }
 
@@ -11,31 +12,13 @@ html {
     height: 100vh;
 }
 
-.sidebar {
-    width: 250px;
+/* foooter */
+footer {
+    
+    text-align: center;
     background-color: #2d3e50;
     color: white;
-    padding-top: 20px;
-}
-
-.sidebar h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    padding: 15px 20px;
-    border-bottom: 1px solid #3e4f61;
-    cursor: pointer;
-}
-
-.sidebar ul li:hover {
-    background-color: #1b2737;
+    
 }
 
 .main-content {
@@ -75,12 +58,31 @@ input[type="text"] {
 
 .close {
     position: absolute; 
+    padding: 3px 15px;
+    background-color: #2d3e50;
+    right: 10px;
+    color: red;
+    border: none;
+    box-shadow: 1px 9px 8px rgba(230, 97, 97, 0.1);
+    border-radius: 5px;
+  }
+
+  
+
+  ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
     
-    padding: 1px 5px 1px;
-    
-    
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+  }
+
+
+  ul li:hover {
+    background: #ddd;
   }
 
   /* When clicked on, add a background color and strike out text */
@@ -95,12 +97,12 @@ ul li.checked {
     content: '';
     position: absolute;
     
-    border-color: #100f0f;
+    border-color: #6fee93;
     border-style: solid;
     border-width: 0 2px 2px 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
    
-    left: 300px;
+    left: 9px;
     transform: rotate(45deg);
     height: 15px;
     width: 7px;
