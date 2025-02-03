@@ -17,6 +17,7 @@ for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
     var div = this.parentElement;
     div.style.display = "none";
+   
   }
 }
 
@@ -55,14 +56,17 @@ var newParagraph = document.createElement("li");
 newParagraph.innerHTML = item;
 
 // 8. append the new paragraph to the searches div
-AddItem.appendChild(newParagraph);
+
 
 if(item == '') {
   alert("You must write here!");
+  
 } else {
   document.getElementById("Tasks").appendChild(newParagraph);
+
 }
 document.getElementById("AddTask").value = "";
+
 
 var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -76,18 +80,15 @@ var span = document.createElement("SPAN");
       div.style.display = "none";
     }
   }
-  saveData();
+  
 }
 
 // trying to add Save data but currently not working
 function saveData() {
 
-  localStorage.setItem("data" , Tasks.innerHTML)
+  localStorage.setItem("data" , Tasks.innerHTML);
 }
 
 function showTasks(){
   Tasks.innerHTML = localStorage.getItem("data");
 }
-
-
-
