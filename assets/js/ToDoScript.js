@@ -3,9 +3,9 @@ const listContainer = document.getElementById("Tasks");
 
 //Going to try add date to this
 
-// var todayDate = new Date().toISOString().split('T')[0];
-// document.getElementById("expireDate").setAttribute('min', today);
-// var expireDate = document.getElementById("expireDate");
+var todayDate = new Date().toISOString().split('T')[0];
+document.getElementById("expireDate").setAttribute('min', todayDate);
+var expireDate = document.getElementById("expireDate");
 
 
 //===== addTask() function you need to provide add Task btn using click event
@@ -16,7 +16,12 @@ function addTask(){
 
     if(inputBox.value == ""){
         alert("You need to write something here!")
-    } else {
+    } 
+    else if(expireDate.value == "")
+    {
+        alert("Please select a date:")
+    }
+    else {
         //if there is a value, then do this 
 
         // 1- create li tag when add new task clicking the btn
@@ -26,6 +31,22 @@ function addTask(){
         // 3- then append this li tag with value to our container
         listContainer.appendChild(li);
         
+
+        //4 div tags for date
+
+        let dateDiv = document.createElement('div'); //to store start and end dates
+        dateDiv.classList.add("dates"); // i added a class to second div
+        li.appendChild(dateDiv);
+
+
+        // 5 - add start date and expire date to second div (dateDiv)
+        let startDate = document.createElement('span3');
+        startDate.innerText = "Start Date: "+todayDate;
+        let endDate = document.createElement('span3');
+        endDate.innerHTML = " Expire Date: "+expireDate.value;
+        dateDiv.appendChild(startDate); 
+        dateDiv.appendChild(endDate); 
+
         var myNodelist = document.getElementsByTagName("LI");
         var i;
         for (i = 0; i < myNodelist.length; i++) {
@@ -35,6 +56,18 @@ function addTask(){
             span.appendChild(txt);
             myNodelist[i].appendChild(span);
           }
+
+        
+        var myNodelist2 = document.getElementsByTagName("LI");
+        var j;
+        for (j = 0; j < myNodelist2.length; j++) {
+            var span2 = document.createElement("SPAN2");
+            var txt2 = document.createTextNode("Edit");
+            span2.className = "edit";
+            span2.appendChild(txt2);
+            myNodelist2[j].appendChild(span2);
+          }
+
     }
      //::::after adding task inputbox should be empty:::
      inputBox.value = "";
@@ -43,6 +76,7 @@ function addTask(){
      saveData();
 
 }
+
 
 //===== when click listcontainer =======
 
@@ -54,7 +88,11 @@ listContainer.addEventListener('click',(e)=>{
         //that changes shoud be saved in the local storage
         saveData();
     }
-
+    else if(e.target.tagName === 'SPAN2') {
+        alert("Edit button in progress");
+        saveData();
+     
+    }
     //when you click the close btn, task should be removed from the container
     else if(e.target.tagName === 'SPAN'){
         e.target.parentElement.remove();
@@ -62,6 +100,11 @@ listContainer.addEventListener('click',(e)=>{
         saveData();
     }
 })
+
+
+
+
+
 
 //------------------------------------------------------------------------
 //=====this function is used to save data in local storage.=====

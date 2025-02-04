@@ -14,7 +14,6 @@ html {
 
 /* foooter */
 footer {
-    
     text-align: center;
     background-color: #2d3e50;
     color: white;
@@ -61,13 +60,25 @@ input[type="text"] {
     padding: 3px 15px;
     background-color: #2d3e50;
     right: 10px;
+    top: 5px;
     color: red;
     border: none;
     box-shadow: 1px 9px 8px rgba(230, 97, 97, 0.1);
     border-radius: 5px;
   }
 
-  
+  .edit {
+    position: absolute; 
+    padding: 3px 15px;
+    background-color: #2d3e50;
+    right: 10px;
+    top: 5px;
+    margin-right: 50px;
+    color: rgb(24, 227, 34);
+    border: none;
+    box-shadow: 1px 9px 8px rgba(230, 97, 97, 0.1);
+    border-radius: 5px;
+  }
 
   ul li {
     cursor: pointer;
@@ -106,3 +117,5 @@ ul li.checked {
     height: 15px;
     width: 7px;
   }
+
+
