@@ -69,7 +69,7 @@ input[type="text"] {
 
   .edit {
     position: absolute; 
-    padding: 3px 15px;
+    padding: 6px 15px;
     background-color: #2d3e50;
     right: 10px;
     top: 5px;
@@ -116,6 +116,10 @@ ul li.checked {
     transform: rotate(45deg);
     height: 15px;
     width: 7px;
+  }
+
+  .date-box{
+    font-weight: bold;
   }
 
 

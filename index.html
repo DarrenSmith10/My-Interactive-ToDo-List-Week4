@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ToDoList</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://unpkg.com/feather-icons"></script>
@@ -19,6 +19,8 @@
                 <h2>Add your Tasks</h2>
                 <input type="text" id="AddTask" placeholder="Add task" />
                 <button onclick="addTask()">Add</button>
+                <button onclick="saveData()">Save</button>
+                <button onclick="Reset()">Reset</button>
                 <span class="date-box">
                     <input type="date" id="expireDate" min="" placeholder="date">
                 </span>
