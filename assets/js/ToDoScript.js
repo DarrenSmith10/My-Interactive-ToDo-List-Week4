@@ -1,7 +1,7 @@
 // Element Setup for ToDo List & Input Box
 const inputBox = document.getElementById("AddTask");
 const listContainer = document.getElementById("Tasks");
-
+const editButton = document.getElementById("Tasks");
 //Date Box Parameters
 
 var todayDate = new Date().toISOString().split('T')[0];
@@ -67,8 +67,7 @@ function addTask(){
             editButton.className = "edit";
             editButton.appendChild(txt2);
             myNodelist2[j].appendChild(editButton);
-            editButton.addEventListener("click", (e) =>
-                editing(e.target.parentElement));
+            
           }
         
 
@@ -102,11 +101,15 @@ listContainer.addEventListener('click',(e)=>{
     }
 })
 
+//== when click edit button ===
+editButton.addEventListener("click", (e) =>
+    editing(e.target.parentElement));
+
+
 //===== Edit Button Function =======
 
 function editing(liTag) {
     let liContent = liTag.querySelector("span4");
-  
     let input = document.createElement("input");
     input.type = "text";
     input.value = liContent.textContent;
