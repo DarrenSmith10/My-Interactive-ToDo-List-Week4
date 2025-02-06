@@ -67,7 +67,8 @@ function addTask(){
             editButton.className = "edit";
             editButton.appendChild(txt2);
             myNodelist2[j].appendChild(editButton);
-            
+            editButton.addEventListener("click", (e) =>
+                editing(e.target.parentElement));
           }
         
 
@@ -93,6 +94,12 @@ listContainer.addEventListener('click',(e)=>{
         //that changes shoud be saved in the local storage
         AutosaveData();
     }
+    else if
+        (e.target.className == "edit") {
+        editing(e.target.parentElement);
+    }
+   
+   
     //when you click the close btn, task should be removed from the container
     else if(e.target.tagName === 'SPAN'){
         e.target.parentElement.remove();
@@ -101,9 +108,7 @@ listContainer.addEventListener('click',(e)=>{
     }
 })
 
-//== when click edit button ===
-editButton.addEventListener("click", (e) =>
-    editing(e.target.parentElement));
+
 
 
 //===== Edit Button Function =======
@@ -118,6 +123,7 @@ function editing(liTag) {
     input.addEventListener("blur", () => {
       liContent.innerHTML = input.value;
       input.remove();
+     
     });
 }
 
